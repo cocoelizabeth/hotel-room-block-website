@@ -6,7 +6,13 @@
 
 /**
  * @type {import('gatsby').GatsbyConfig}
+ * 
+ * 
  */
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -39,5 +45,13 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: `60nhqkckk4i6`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      }
+  },
   ],
 }
