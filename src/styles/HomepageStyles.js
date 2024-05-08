@@ -53,7 +53,21 @@ section {
     }
     .body-copy-container {
         .h1, .h2 {
-            max-width: 720px;
+            max-width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            
+        }
+        .h1 {
+            margin-bottom: 10px;
+        }
+        .h2 {
+            margin-bottom: 1.5em;
+        }
+        p:nth-child(3) {
+            /* padding-left: var(--grid-padding); */
+            max-width: 66%;
+            text-align: center;
         }
     } 
 }

@@ -61,12 +61,12 @@ header {
   --font-size-xl:  50px;
   --font-size-large: 20px;
   --font-size-h1: 25px;
-  --font-size-h2: 12px;
-  --font-size-h3: 16px;
-  --font-size-body-copy: 15px;
-  --font-size-small: 14px;
-  --font-size-xs: 10px;
-  --font-size-xxs: 8px;
+  --font-size-h2: 14px;
+  --font-size-h3: 14px;
+  --font-size-body-copy: 14px;
+  --font-size-small: 10px;
+  --font-size-xs: 8px;
+  --font-size-xxs: 6px;
 
   --line-height-body-copy:30px;
   
@@ -94,8 +94,8 @@ header {
     --font-size-small: 15px;
     --font-size-large: 30px;
     --font-size-h1: 40px;
-    --font-size-h2: 14px;
-    --font-size-h3: 20px;
+    --font-size-h2: 16px;
+    --font-size-h3: 18px;
   }
   .amenity-list-item {
     width: 20%;
@@ -108,6 +108,7 @@ header {
     --font-size-small: 16px;
     --font-size-xl: 70px;
   }
+  
 
 }
 
@@ -170,6 +171,7 @@ body {
 p {
   font-size: var(--font-size-body-copy);
   line-height: var(--line-height-body-copy);
+  color: var(--color-la-grey);
 }
 
 section {
