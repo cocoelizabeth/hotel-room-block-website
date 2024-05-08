@@ -54,8 +54,8 @@ section {
     .body-copy-container {
         .h1, .h2 {
             max-width: 80%;
-            margin: 0 auto;
-            text-align: center;
+            /* margin: 0 auto;
+            text-align: center; */
             
         }
         .h1 {
@@ -66,8 +66,8 @@ section {
         }
         p:nth-child(3) {
             /* padding-left: var(--grid-padding); */
-            max-width: 66%;
-            text-align: center;
+            /* max-width: 66%;
+            text-align: center; */
         }
     } 
 }
