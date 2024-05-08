@@ -1,128 +1,175 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, navigate, useStaticQuery } from 'gatsby'
 import { StaticImage } from "gatsby-plugin-image"
-
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+// import * as styles from "../components/index.module.css"
+import RichText from "../components/richText"
+import HomepageStyles from "../styles/HomepageStyles";
+import Accordian from "../components/Accordian";
 
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
 
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
+export default function Home() {
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
-  </Layout>
-)
+  const data = useStaticQuery (
+    graphql`
+        query  {
+          allContentfulHomePage {
+            edges {
+              node {
+                emailTemplateLink {
+                  emailTemplateLink
+                }
+                groupCode
+                heroImage {
+                  gatsbyImageData
+                  file {
+                    contentType
+                    fileName
+                    url
+                  }
+                  description
+                }
+                phoneLink
+                slug
+                sections {
+                  richText {
+                    raw
+                  }
+                  title
+                }
+                welcomeMessage {
+                  welcomeMessage
+                }
+              }
+            }
+          }
+        }
+        
+    `
+);
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+const homepageData = data.allContentfulHomePage.edges[0].node;
+const mainHeroImageSrcSet = homepageData.heroImage.gatsbyImageData.images.sources[0].srcSet;
+const mainHeroImageSrc = homepageData.heroImage.gatsbyImageData.images.fallback.src;
+const altText = homepageData.heroImage.description;
+const copy = homepageData.sections[0].richText;
+const title = homepageData.sections[0].title;
 
-export default IndexPage
+  return(
+    <HomepageStyles>
+       <div className="hero-image-container fade-in">
+         <img src={mainHeroImageSrc} srcSet={mainHeroImageSrcSet} className="hero-image" alt={altText}></img>
+       </div>
+       <div className="body-copy-container">
+        <RichText copy={copy} title={title} />
+       </div>
+     
+    </HomepageStyles>
+  )
+
+}
+
+// export default class IndexPage extends React.Component {
+//   constructor(props) {
+//       super(props);
+//       this.copy = props.data.allContentfulTextSection.edges[0].node.richText;
+//       this.text = props.data.allContentfulTextSection.edges[0].node.title
+//   }
+//   render() {
+//     return(
+//       <Layout>
+//         <RichText 
+//           title={this.title} 
+//           copy={this.copy}
+//         />
+
+//       </Layout>
+
+      
+//     )
+//   }
+// }
+// const IndexPage = () => (
+//   <Layout>
+//     <div className={styles.textCenter}>
+//       <StaticImage
+//         src="../images/example.png"
+//         loading="eager"
+//         width={64}
+//         quality={95}
+//         formats={["auto", "webp", "avif"]}
+//         alt=""
+//         style={{ marginBottom: `var(--space-3)` }}
+//       />
+//       <p>
+//       {pageQuery.map((text, i) => (
+//       <React.Fragment key={link.url}>
+//         <a href={`${link.url}${utmParameters}`}>{link.text}</a>
+//         {i !== moreLinks.length - 1 && <> · </>}
+//       </React.Fragment>
+//     ))}
+//       </p>
+//       <h1>
+//         Welcome to <b>Gatsby!</b>
+//       </h1>
+//       <p className={styles.intro}>
+//         <b>Example pages:</b>{" "}
+//         {samplePageLinks.map((link, i) => (
+//           <React.Fragment key={link.url}>
+//             <Link to={link.url}>{link.text}</Link>
+//             {i !== samplePageLinks.length - 1 && <> · </>}
+//           </React.Fragment>
+//         ))}
+//         <br />
+//         Edit <code>src/pages/index.js</code> to update this page.
+//       </p>
+//     </div>
+//     <ul className={styles.list}>
+//       {links.map(link => (
+//         <li key={link.url} className={styles.listItem}>
+//           <a
+//             className={styles.listItemLink}
+//             href={`${link.url}${utmParameters}`}
+//           >
+//             {link.text} ↗
+//           </a>
+//           <p className={styles.listItemDescription}>{link.description}</p>
+//         </li>
+//       ))}
+//     </ul>
+//     {moreLinks.map((link, i) => (
+//       <React.Fragment key={link.url}>
+//         <a href={`${link.url}${utmParameters}`}>{link.text}</a>
+//         {i !== moreLinks.length - 1 && <> · </>}
+//       </React.Fragment>
+//     ))}
+//   </Layout>
+// )
+
+// /**
+
+// export const Head = () => <Seo title="Home" />
+
+// export default IndexPage
+
+// export const pageQuery = graphql`
+//       query  {
+//         allContentfulTextSection {
+//           edges {
+//             node {
+//               title
+//               richText {
+//                 raw
+//               }
+//             }
+//           }
+//         }
+//       }
+// `
+
+
+
+

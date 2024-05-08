@@ -15,10 +15,10 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Coco & Adam's Room Block at Live Aqua`,
+    description: `Coco & Adam's Room Block for their wedding in San Miguel de Allende`,
+    author: `Coco & Adam`,
+    siteUrl: `https://roomblock.netlify.app`,
   },
   plugins: [
     `gatsby-plugin-image`,

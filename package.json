@@ -5,15 +5,25 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@fontsource/cinzel": "^5.0.13",
+    "@fontsource/fira-mono": "^5.0.13",
+    "@fontsource/marcellus": "^5.0.13",
+    "@fontsource/roboto": "^5.0.13",
     "gatsby": "^5.13.3",
+    "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-source-contentful": "^8.13.2",
     "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-inline-svg": "^1.2.0",
     "gatsby-transformer-sharp": "^5.13.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^5.2.1",
+    "stein-js-client": "^0.0.2",
+    "styled-components": "^6.1.10"
   },
   "devDependencies": {
     "prettier": "^2.8.8"
