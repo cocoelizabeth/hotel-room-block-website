@@ -71,8 +71,11 @@ header {
   --line-height-body-copy:30px;
   
   --logo-height: 34px;
-  --nav-margin-top: 1.5rem;
-  --nav-margin-bottom: 1.5rem;
+  /* --nav-margin-top: 1.5rem;
+  --nav-margin-bottom: 1.5rem; */
+    --nav-margin-top: 1rem;
+  --nav-margin-bottom: 1rem;
+
   --header-height: calc(var(--logo-height) + var(--nav-margin-top) + var(--nav-margin-bottom));
 
   --section-padding-small: 3rem;
@@ -115,8 +118,10 @@ header {
 @media only screen and (min-width: 1200px) {
   :root {
     --grid-padding:7rem;
-    --nav-margin-top: 2rem;
-    --nav-margin-bottom: 2rem;
+    /* --nav-margin-top: 2rem;
+    --nav-margin-bottom: 2rem; */
+    --nav-margin-top: 1.5rem;
+    --nav-margin-bottom: 1.5rem;
   }
 
 }
