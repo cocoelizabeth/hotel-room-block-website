@@ -5,7 +5,7 @@ section {
 }
 .hero-image-container {
         padding-top: var(--header-height);
-        height: calc(100vh - (var(--header-height) * 3));
+        height: calc(100vh - (var(--header-height) * 4));
         position: relative;
     }
     .hero-image {
@@ -74,7 +74,7 @@ section {
 
 @media only screen and (min-width: 992px) {
     .hero-image-container {
-        height: calc(100vh - (var(--header-height) * 2));
+        height: calc(100vh - (var(--header-height) * 1));
     }
 }
    
