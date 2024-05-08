@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 * {
     font-family: var(--font-family-body), sans-serif;
@@ -7,9 +8,9 @@ header {
   z-index: 100;
 }
 
-h1 {
-  font-weight: normal;
-}
+
+
+
 
 :root {
     --font-family-body: "Roboto";
@@ -58,8 +59,10 @@ h1 {
 
 :root {
   --font-size-xl:  50px;
-  --font-size-large: 30px;
-  --font-size-h3: 20px;
+  --font-size-large: 20px;
+  --font-size-h1: 25px;
+  --font-size-h2: 12px;
+  --font-size-h3: 16px;
   --font-size-body-copy: 15px;
   --font-size-small: 14px;
   --font-size-xs: 10px;
@@ -89,6 +92,10 @@ h1 {
     --logo-height: 45px;
     --font-size-xxs: 10px;
     --font-size-small: 15px;
+    --font-size-large: 30px;
+    --font-size-h1: 40px;
+    --font-size-h2: 14px;
+    --font-size-h3: 20px;
   }
   .amenity-list-item {
     width: 20%;
@@ -119,24 +126,33 @@ body {
   line-height: 1.2;
 }
 .h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--font-size-h1);
   font-family: var(--font-family-heading);
   font-family: "Cinzel";
-  font-weight: 500;
-  /* font-size: 45px; */
   color: #5f6db3;
-  line-height: 1.12;
-  text-transform: capitalize
+  margin-bottom: 6px;
+
 }
+
+.h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--font-size-h2);
+  margin-bottom: 17px;
+}
+
+
 .h2, .h3{
   font-family: var(--font-family-body);
   font-family: "Roboto";
   font-weight: 600;
-  font-size: 18px;
   color: #666;
   text-transform: uppercase;
 }
 
-
+.h3 {
+  font-size: var(--font-size-h3);
+}
 
  .h4, .h5 {
   font-family: var(--font-family-body);
@@ -147,19 +163,9 @@ body {
 }
 
 
-.h1 {
-  font-size: var(--font-size-xl);
-  line-height: var(--font-size-xl);
-}
 
-.h2 {
-  font-size: var(--font-size-large);
-  line-height: var(--font-size-large);
-}
 
-.h3 {
-  font-size: var(--font-size-h3);
-}
+
 
 p {
   font-size: var(--font-size-body-copy);
@@ -179,6 +185,9 @@ section {
   border-bottom: 1px solid var(--central-black);
 }
 
+a b{
+  color: var(--color-la-purple);
+}
 
 
 @media only screen and (min-width: 1280px) {
@@ -224,6 +233,13 @@ section {
   0% {opacity:0; visibility: hidden;}
   100% {opacity:1; visibility:visible}
 }
+
+@media only screen and (max-width: 767.98px) {
+  .h1 {
+    margin-bottom: 6px;
+    margin-bottom: 17px;
+  }
+} 
 
 
 

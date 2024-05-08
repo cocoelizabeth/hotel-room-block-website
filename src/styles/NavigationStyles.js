@@ -4,11 +4,15 @@ export default styled.header`
     position: fixed;
     top: 0;
     width: 100vw;
-    border-top: 1px solid var(--central-black);
-    border-bottom: 1px solid var(--central-black);
+    /* border-top: 1px solid var(--central-black);
+    border-bottom: 1px solid var(--central-black); */
+    background: #fff;
+    color: #666;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .16);
     section {
         width: 100%;
-        background-color: var(--central-white);
+        /* background-color: var(--central-white); */
+        background-color: white;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -27,22 +31,25 @@ export default styled.header`
         margin-bottom: 0;
         cursor: pointer;
     }
-
     .button {
         position: relative;
         display: inline-block;
         cursor: pointer;
         width:96px;
-        width:121px;
-        line-height: 14px;
-        cursor: pointer;
-        
+        width:150px;
+        /* line-height: 14px; */
+        /* margin-left: 20px; */
+        /* width: 163px; */
+        background-color: var(--color-la-purple);
+        text-align: center;
+        color: white;
+        font-size: 10px;
     }
 
 
   
   .button button {
-    padding: 8px 16px;
+
     border: none;
     background: none;
     outline: none;
@@ -50,48 +57,39 @@ export default styled.header`
     font-size: var(--font-size-xs);
     font-size: var(--font-size-small);
     /* letter-spacing: 1.5px; */
-    margin-top: 5px;
-    margin-bottom: 5px;
-    color: var(--central-olive);
+    /* margin-top: 5px;
+    margin-bottom: 5px; */
+    /* color: var(--central-olive); */
+    color: #fff;
+    /* position: relative;
+    display: inline-flex; */
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    padding: 9px 10px;
+    border-width: 1px;
+    border-radius: 0;
+    text-decoration: none;
+    /* white-space: normal; */
+    font-weight: 400;
+    font-size: var(--font-size-small);
+    font-family: "Roboto";
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    line-height: 1.29;
+    font-size: 12px;
+    
   }
-  
-  .button svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-  
-  .button path {
-    stroke: var(--central-olive);
-    stroke-width: 8px;
-    stroke-dasharray: 0 1500;
 
-    animation: draw 1s forwards;
-    animation-delay: 3s;
-    /* animation: drawReverse 1s backwards; */
-  }
 
-  .button path.animation-delay-none {
-    animation-delay: 0s;
-  }
-  
+
 
   button:hover {
     cursor: pointer;
   }
   
-  .button:hover path {
-    /* animation: draw 1s forwards; */
-    animation: drawAgain 1s forwards;
-    stroke-dasharray: 1500 0;
-  }
 
-  .animation-delay {
 
-  }
   
   @keyframes draw {
     from {
@@ -104,44 +102,23 @@ export default styled.header`
   }
 
   
-  @keyframes drawReverse {
-    from {
-      stroke-dasharray: 1500 1500;
-    }
-  
-    to {
-      stroke-dasharray: 0 1500;
-    }
-  }
-
-  @keyframes drawAgain {
-    from {
-      stroke-dasharray: 0 1500;
-      opacity:0;
-    }
-  
-    to {
-      stroke-dasharray: 1500 1500;
-      opacity: 1;
-    }
-  }
 
   @media only screen and (min-width: 768px) {
     .button {
-      width: 130px;
+      /* width: 130px; */
       button {
-        padding: 10px 20px;
-        line-height: 15px;
+        /* padding: 10px 20px; */
+        /* line-height: 15px; */
       }
     }
   } 
 
   @media only screen and (min-width: 992px) {
     .button {
-      width: 150px;
+      /* width: 150px; */
       button {
-        padding: 15px 20px;
-        line-height: 15px;
+        /* padding: 15px 20px; */
+        /* line-height: 15px; */
       }
     }
   } 

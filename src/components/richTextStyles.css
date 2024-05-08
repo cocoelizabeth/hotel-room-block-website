@@ -1,24 +1,27 @@
 .h1 {
     margin: 0;
-    margin-bottom: 3rem;
     padding: 0;
-    line-height: var(--line-height-dense);
     letter-spacing: -0.01em;
-    font-size: 2em;
-    text-align: center;
+    line-height: 1.12;
+    /* text-transform: capitalize; */
+    margin-bottom: 8px;
+    /* text-align: center; */
 
 }
 .h2 {
-    text-align: center;
     margin-bottom: 1em;
-    margin: 0 auto;
+    font-family: "Roboto";
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    line-height: 1.2;
 }
 
 
 
 .h3 {
     margin-top: 1em;
-    font-size: 1.2em;
+
 }
 table {
     margin: 0 auto;
@@ -55,9 +58,7 @@ table tbody tr:nth-child(1) {
 
 }
 
-a {
-    color: var(--color-la-purple);
-}
+
 li {
 
 }
@@ -68,3 +69,11 @@ body {
   }
 
 /* .richtext */
+a {
+  color: var(--color-la-purple);
+}
+
+a.underline {
+  color: var(--color-la-purple);
+}
+

@@ -32,18 +32,30 @@ section {
 }
 /* paragraph text */
 .richTextContainer p:nth-child(2) {
-    text-align: center;
+    /* text-align: center; */
     margin: 0 auto;
 }
 .richTextContainer p:nth-child(3) {
-  text-align: center;
+  /* text-align: center; */
   margin: 0 auto;
 }
+
+@media only screen and (min-width: 576px) {
+    .h1, .h2 {
+            max-width: 540px;
+        }
+}
+
 
 @media only screen and (min-width: 768px) {
     .hero-image-container {
         height: calc(100vh - (var(--header-height)));
     }
+    .body-copy-container {
+        .h1, .h2 {
+            max-width: 720px;
+        }
+    } 
 }
 
 @media only screen and (min-width: 992px) {
