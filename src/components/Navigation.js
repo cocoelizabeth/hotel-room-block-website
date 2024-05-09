@@ -15,6 +15,17 @@ const Header = () => {
     const data = useStaticQuery (
         graphql `
             query {
+              allContentfulHomePage {
+                edges {
+                  node {
+                    groupCode
+                    phoneLink
+                    emailTemplateLink {
+                      emailTemplateLink
+                    }
+                  }
+                }
+              }
                 allContentfulCommonComponents {
                     edges {
                       node {
@@ -35,6 +46,8 @@ const Header = () => {
         `
 
     )
+
+    
     // const data = useStaticQuery (
     //     graphql`
     //         query  {
@@ -75,9 +88,11 @@ const Header = () => {
     const altText = headerData.hotelLogo.title;
     // const callToActionText = headerData.callToActionText;
     // const callToActionLink = headerData.callToActionLink;
-    const callToActionText = "Book Now";
-    const callToActionLink = "/";
+
      const logoFile = headerData.hotelLogo.file;
+     const emailTemplateLink = data.allContentfulHomePage.edges[0].node.emailTemplateLink.emailTemplateLink;
+     const callToActionText = "Book Now";
+     const callToActionLink = emailTemplateLink;
 
 
 
@@ -104,7 +119,7 @@ const Header = () => {
        
             <img alt={altText} className="logo" src={logoUrl}></img>
         </Link>
-
+  
         {/* <Link to="/" className="logo-container"><img alt={altText} className="logo" src={logoUrl}></img></Link> */}
 
         <div className='button'>

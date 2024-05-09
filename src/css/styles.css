@@ -3,7 +3,11 @@
 * {
     font-family: var(--font-family-body), sans-serif;
 }
-
+div.button,
+button,
+a {
+  cursor: pointer !important;
+}
 header {
   z-index: 100;
 }
