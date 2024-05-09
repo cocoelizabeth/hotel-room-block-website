@@ -193,7 +193,7 @@ body {
   color: #666;
   text-transform: uppercase;
   font-size: var(--font-size-body-copy);
-  padding-top: var(--grid-gutter);
+  padding-top: calc(var(--grid-gutter) / 2);
 }
 
 
