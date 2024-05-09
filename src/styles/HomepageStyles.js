@@ -27,7 +27,7 @@ section {
     padding-right: var(--grid-gutter); */
 
     p {
-        font-size: var(--font-size-body-copy);
+        /* font-size: var(--font-size-body-copy); */
         line-height: calc(var(--font-size-body-copy) * 2);
         padding-top: calc(var(--grid-gutter) / 2);
   
@@ -60,6 +60,22 @@ section {
     text-align: center;
     margin: 0 auto;
    text-wrap: balance;
+  
+}
+
+.richTextContainer p:nth-child(3)::after {
+    content: "-";
+    width: 70px;
+    height: 4px;
+    color: var(--color-la-purple);
+    background-color: var(--color-la-purple);
+ 
+    font-size: 1px;
+    line-height: 1px;
+    display: block;
+    margin: 0 auto;
+    margin-top: var(--grid-gutter);
+    margin-bottom: var(--grid-gutter);
 }
 
 @media only screen and (min-width: 576px) {
@@ -83,7 +99,7 @@ section {
     }
 }
 
- padding-bottom: calc(var(--grid-gutter) / 2);
+
 
 
 
@@ -91,11 +107,18 @@ section {
 /* Heading */
 .richTextContainer div:nth-child(4) {
     padding-top: var(--section-padding-small);
+    text-wrap: balance;
 }
 .richTextContainer div:nth-child(5) {
     /* Remove space before second line of h3 for "Room Options & Special Rates" */
     margin-top: 0; 
 } 
+
+/* .richTextContainer {
+    table {
+        width: 100%;
+    } 
+} */
 
 @media only screen and (min-width: 576px) {
     .h1, .h2 {
