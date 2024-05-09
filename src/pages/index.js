@@ -57,6 +57,7 @@ const mainHeroImageSrc = homepageData.heroImage.gatsbyImageData.images.fallback.
 const altText = homepageData.heroImage.description;
 const copy = homepageData.sections[0].richText;
 const title = homepageData.sections[0].title;
+const welcomeMessage = homepageData.welcomeMessage.welcomeMessage;
 
   return(
     <HomepageStyles>
@@ -64,6 +65,7 @@ const title = homepageData.sections[0].title;
          <img src={mainHeroImageSrc} srcSet={mainHeroImageSrcSet} className="hero-image" alt={altText}></img>
        </div>
        <div className="body-copy-container">
+ 
         <RichText copy={copy} title={title} />
        </div>
      

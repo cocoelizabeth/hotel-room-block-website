@@ -21,28 +21,86 @@ section {
     padding-top: var(--section-padding-small);
     padding-left: var(--grid-padding);
     padding-right: var(--grid-padding);
+  
+   
     /* padding-left: var(--grid-gutter);
     padding-right: var(--grid-gutter); */
 
     p {
         font-size: var(--font-size-body-copy);
         line-height: calc(var(--font-size-body-copy) * 2);
+        padding-top: calc(var(--grid-gutter) / 2);
+  
         /* margin-bottom: 3rem; */
     }
 }
-/* paragraph text */
-.richTextContainer p:nth-child(2) {
-    /* text-align: center; */
+
+
+/*=============================================
+=            HOME PAGE RICH TEXT BLOCKS            =
+=============================================*/
+
+/*----------  Welcome Paragraph  ----------*/
+/* Heading */
+.richTextContainer :nth-child(1) {
+    text-align: center;
     margin: 0 auto;
+   
 }
+
+/* Subhead */
+.richTextContainer :nth-child(2) {
+    text-align: center;
+    margin: 0 auto;
+   text-wrap: balance;
+}
+
+/* Paragraph Text */
 .richTextContainer p:nth-child(3) {
-  /* text-align: center; */
-  margin: 0 auto;
+    text-align: center;
+    margin: 0 auto;
+   text-wrap: balance;
 }
 
 @media only screen and (min-width: 576px) {
+    .richTextContainer :nth-child(2),
+    .richTextContainer p:nth-child(3) {
+   
+    }
+
+}
+@media only screen and (min-width: 768px) {
+    .richTextContainer :nth-child(2),
+    .richTextContainer :nth-child(3) {
+        text-wrap: balance;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .richTextContainer :nth-child(2),
+    .richTextContainer :nth-child(3) {
+        max-width: 811px;
+    }
+}
+
+ padding-bottom: calc(var(--grid-gutter) / 2);
+
+
+
+/*----------  Room Options & Special Rates ----------*/
+/* Heading */
+.richTextContainer div:nth-child(4) {
+    padding-top: var(--section-padding-small);
+}
+.richTextContainer div:nth-child(5) {
+    /* Remove space before second line of h3 for "Room Options & Special Rates" */
+    margin-top: 0; 
+} 
+
+@media only screen and (min-width: 576px) {
     .h1, .h2 {
-            max-width: 540px;
+            /* max-width: 540px; */
+           
         }
 }
 
@@ -53,7 +111,7 @@ section {
     }
     .body-copy-container {
         .h1, .h2 {
-            max-width: 80%;
+            /* max-width: 80%; */
             /* margin: 0 auto;
             text-align: center; */
             
