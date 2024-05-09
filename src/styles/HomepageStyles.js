@@ -1,4 +1,11 @@
 import styled from 'styled-components';
+import { AiOutlineMail } from "react-icons/ai";
+import { MdEmail } from "react-icons/md";
+import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
+
+import { renderToStaticMarkup } from 'react-dom/server';
+import React from 'react';
+
 export default styled.div`
 section {
     padding-bottom: 2rem;
@@ -100,18 +107,16 @@ section {
 }
 
 
-
-
-
 /*----------  Room Options & Special Rates ----------*/
 /* Heading */
-.richTextContainer div:nth-child(4) {
-    padding-top: var(--section-padding-small);
+.richTextContainer :nth-child(4) {
     text-wrap: balance;
 }
-.richTextContainer div:nth-child(5) {
+/* Paragraph Text 1 */
+.richTextContainer :nth-child(5) {
     /* Remove space before second line of h3 for "Room Options & Special Rates" */
     margin-top: 0; 
+    text-wrap: pretty;
 } 
 
 /* .richTextContainer {
@@ -119,6 +124,43 @@ section {
         width: 100%;
     } 
 } */
+
+/*----------  How to Book  ----------*/
+/* Heading */
+.richTextContainer :nth-child(8) {}
+/* Email Reservations Header */
+.richTextContainer h5:nth-of-type(1) {
+    margin-block-start: 0px;
+}
+.richTextContainer h5:nth-of-type(1)::before {
+    content: url("data:image/svg+xml; utf8, ${renderToStaticMarkup(<HiOutlineMail/>).replace(/"/g, '\'')}");
+}
+/* Email Reservations -Preformatted template text (p 1) */
+.richTextContainer :nth-child(10) {}
+/* Email Reservations -Direct Email Text (p 2) */
+.richTextContainer :nth-child(11) {}
+/* Phone Reservations Headline */
+.richTextContainer h5:nth-of-type(2){
+    padding-top: var(--grid-gutter);
+}
+.richTextContainer h5:nth-of-type(2)::before {
+    content: url("data:image/svg+xml; utf8, ${renderToStaticMarkup(<HiOutlinePhone/>).replace(/"/g, '\'')}");
+}
+.richTextContainer h5:nth-of-type(1),
+.richTextContainer h5:nth-of-type(2) {
+    margin-block-end: 0px;
+}
+.richTextContainer h5:nth-of-type(1)::before,
+.richTextContainer h5:nth-of-type(2)::before {
+    width: 20px;
+    height: 20px;
+    color: var(--color-la-purple);
+    margin-right: 5px;
+    align-self: center;
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 70%;
+}
 
 @media only screen and (min-width: 576px) {
     .h1, .h2 {

@@ -186,13 +186,17 @@ body {
   text-transform: none;
 }
 
- .h4, .h5 {
-
-  > b {
-    font-family: var(--font-family-body);
-    font-weight: 500;
-  }
+.h5 {
+  font-family: var(--font-family-body);
+  font-family: "Roboto";
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  font-size: var(--font-size-body-copy);
+  padding-top: var(--grid-gutter);
 }
+
+
 
 
 

@@ -21,7 +21,7 @@
 
 .h3 {
     margin-top: 1em;
-
+    padding-top: var(--section-padding-small);
 }
 table {
     margin: 0 auto;
@@ -32,8 +32,16 @@ table {
 
 }
 
+@media only screen and (min-width: 992px) {
+  table {
+    width: fit-content;
+    min-width: 50%;
+  }
+} 
+
+
 table, th, td {
-    border-bottom: 1px solid var(--color-la-grey);
+    border-bottom: .2px solid #d1d1d1;
     vertical-align: middle;
 
   }
@@ -66,7 +74,7 @@ table tbody tr:nth-child(1) {
 
 }
 table tbody tr:nth-child(1) td p {
-  font-size: 10px;
+  font-size: 11px;
   padding-top: 0 !important;
   line-height: normal !important;
 
@@ -101,9 +109,3 @@ a.underline {
 }
 
 
-@media only screen and (min-width: 992px) {
-  table {
-    width: fit-content;
-    min-width: 50%;
-  }
-} 
