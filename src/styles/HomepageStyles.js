@@ -5,7 +5,7 @@ section {
 }
 .hero-image-container {
         padding-top: var(--header-height);
-        height: calc(100vh - (var(--header-height) * 4));
+        height: calc(100vh - (var(--header-height) * 5));
         position: relative;
     }
     .hero-image {
@@ -27,7 +27,7 @@ section {
     p {
         font-size: var(--font-size-body-copy);
         line-height: calc(var(--font-size-body-copy) * 2);
-        margin-bottom: 3rem;
+        /* margin-bottom: 3rem; */
     }
 }
 /* paragraph text */

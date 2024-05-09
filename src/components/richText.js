@@ -22,7 +22,7 @@ const options = {
         [BLOCKS.HEADING_1]: (node, children) => <div className="h1">{children}</div>,
         [BLOCKS.HEADING_2]: (node, children) => <div className="h2">{children}</div>,
         [BLOCKS.HEADING_3]: (node, children) => <div className="h3">{children}</div>,
-        [BLOCKS.HEADING_4]: (node, children) => <h4>{children}</h4>,
+        [BLOCKS.HEADING_4]: (node, children) => <div className="h4">{children}</div>,
         [BLOCKS.HEADING_5]: (node, children) => <h5>{children}</h5>,
         [BLOCKS.HEADING_6]: (node, children) => <h6>{children}</h6>,
         [BLOCKS.UL_LIST]: (node, children) => (<ul>{children}</ul>),

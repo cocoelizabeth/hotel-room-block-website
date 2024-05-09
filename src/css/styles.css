@@ -9,7 +9,9 @@ header {
 }
 
 
-
+html {
+  -webkit-text-size-adjust: 100%;
+}
 
 
 :root {
@@ -58,22 +60,34 @@ header {
 }
 
 :root {
+  /* SOLANA */
+  /* --font-size-xl:  50px;
+  --font-size-large: 30px;
+  --font-size-h3: 20px;
+  --font-size-body-copy: 15px;
+  --font-size-small: 14px;
+  --font-size-xs: 10px;
+  --font-size-xxs: 8px; */
+
+
   --font-size-xl:  50px;
-  --font-size-large: 20px;
+  --font-size-large: 30px;
   --font-size-h1: 30px;
   --font-size-h2: 16px;
-  --font-size-h3: 14px;
-  --font-size-body-copy: 14px;
+  --font-size-h3: 25px;
+  --font-size-h4: 20px;
+  --font-size-body-copy: 15px;
   --font-size-small: 10px;
   --font-size-xs: 8px;
   --font-size-xxs: 6px;
 
-  --line-height-body-copy:30px;
+  --line-height-body-copy:2;
   
   --logo-height: 34px;
+  /* SOLANA */
   /* --nav-margin-top: 1.5rem;
   --nav-margin-bottom: 1.5rem; */
-    --nav-margin-top: 1rem;
+  --nav-margin-top: 1rem;
   --nav-margin-bottom: 1rem;
 
   --header-height: calc(var(--logo-height) + var(--nav-margin-top) + var(--nav-margin-bottom));
@@ -95,10 +109,10 @@ header {
     --logo-height: 45px;
     --font-size-xxs: 10px;
     --font-size-small: 15px;
-    --font-size-large: 30px;
-    --font-size-h1: 40px;
-    --font-size-h2: 16px;
-    --font-size-h3: 18px;
+  
+    --font-size-h1: 45px;
+    --font-size-h2: 18px;
+    --font-size-h3: 30px;
   }
   .amenity-list-item {
     width: 20%;
@@ -136,7 +150,7 @@ body {
   line-height: var(--font-size-h1);
   font-family: var(--font-family-heading);
   font-family: "Cinzel";
-  color: #5f6db3;
+  color: var(--color-la-purple);
   margin-bottom: 6px;
 
 }
@@ -148,7 +162,7 @@ body {
 }
 
 
-.h2, .h3{
+.h2 {
   font-family: var(--font-family-body);
   font-family: "Roboto";
   font-weight: 600;
@@ -158,10 +172,21 @@ body {
 
 .h3 {
   font-size: var(--font-size-h3);
+  font-family: var(--font-family-heading);
+  font-family: "Cinzel";
+  color: var(--color-la-purple);
+}
+
+.h4 {
+  font-size: var(--font-size-h3);
+  font-family: var(--font-family-body);
+  font-weight: 400;
+  color: #666;
+  text-transform: none;
 }
 
  .h4, .h5 {
-  font-family: var(--font-family-body);
+
   > b {
     font-family: var(--font-family-body);
     font-weight: 500;
@@ -177,6 +202,7 @@ p {
   font-size: var(--font-size-body-copy);
   line-height: var(--line-height-body-copy);
   color: var(--color-la-grey);
+  font-weight: 300;
 }
 
 section {
