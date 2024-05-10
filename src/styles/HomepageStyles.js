@@ -232,7 +232,7 @@ section {
     background-color: var(--color-la-light-grey);
     margin-top: 0;
     margin-bottom: 0px;
-    padding-top: calc(var(--grid-gutter) / 2)
+    /* padding-top: calc(var(--grid-gutter) / 2) */
 }
 
 
