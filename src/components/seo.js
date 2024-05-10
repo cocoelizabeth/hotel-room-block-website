@@ -30,7 +30,7 @@ function Seo({ description, title, children }) {
     <>
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
       <meta name="description" content={metaDescription} />
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={defaultTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content="https://images.ctfassets.net/60nhqkckk4i6/4D38AVYfDeVw8TBxXg7XxZ/06ad9725c6834638cace499ebe998454/deluxe-room-king-bed-2-1800x1200_standard.jpg?w=1400&h=1050&q=50&fm=webp" />
