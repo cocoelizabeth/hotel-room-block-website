@@ -73,6 +73,8 @@ const welcomeMessage = homepageData.welcomeMessage.welcomeMessage;
   )
 
 }
+export const Head = () => <Seo title="Home" />
+
 
 // export default class IndexPage extends React.Component {
 //   constructor(props) {
