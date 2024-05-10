@@ -42,6 +42,7 @@ export default styled.footer`
  .contact-link {
     display: block;
     padding-top: 6px;
+    font-size: var(--font-size-body-copy);
  }
 
 .team-item {
