@@ -25,6 +25,8 @@ section {
     padding-top: var(--section-padding-small);
     padding-left: var(--grid-padding);
     padding-right: var(--grid-padding);
+    max-width: 900px;
+    margin: 0 auto;
   
    
     /* padding-left: var(--grid-gutter);
