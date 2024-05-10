@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 * {
-    font-family: var(--font-family-body), sans-serif;
+  font-family: var(--font-family-body), sans-serif;
 }
+
 div.button,
 button,
 a {
   cursor: pointer !important;
 }
+
 header {
   z-index: 100;
 }
@@ -19,41 +21,41 @@ html {
 
 
 :root {
-    --font-family-body: "Roboto";
-    --font-family-heading: "Cinzel";
+  --font-family-body: "Roboto";
+  --font-family-heading: "Cinzel";
 
 
-    --central-white: #F7F6F6;
-    --central-light: #ECE9E9;
-    --central-grey: #BBB7B2ff;
-    --central-dark-grey: #77766F;
-    --central-olive: #848672ff;
-    --central-rust: #9C6E4Dff;
-    --central-black: #292826;
+  --central-white: #F7F6F6;
+  --central-light: #ECE9E9;
+  --central-grey: #BBB7B2ff;
+  --central-dark-grey: #77766F;
+  --central-olive: #848672ff;
+  --central-rust: #9C6E4Dff;
+  --central-black: #292826;
 
 
-    --central-warm-grey: #CBC3BAff;
-    --central-light-grey: #E1DEDCff;
-    --central-medium-grey:#C0BDB9;
-    --central-pewter:#514E49;
-    --central-charcoal: #444142;
-    --central-brick: #8C624E;
-    --central-forest: #4F564B;
-    --icon-color: var(--central-dark-grey);
+  --central-warm-grey: #CBC3BAff;
+  --central-light-grey: #E1DEDCff;
+  --central-medium-grey: #C0BDB9;
+  --central-pewter: #514E49;
+  --central-charcoal: #444142;
+  --central-brick: #8C624E;
+  --central-forest: #4F564B;
+  --icon-color: var(--central-dark-grey);
 
-    --color-champagne-pink: #ecdfd5;
-    --color-desert-sand: #CDAB99;
-    --color-wheat: #DAC8A4;
-    --color-hunter: #172517;
-    --color-limestone: #F1ECE1;
-    --color-light: #e9d9cd;
-    --color-terracotta: #A05337;
-    --color-light-brown: #ac9080;
-    --color-dusty-blue: #829DAB;
-    --color-la-purple:#5f6db3;
-    --color-la-grey: #666;
-    --color-la-light-grey: #f6f6fb;
-    
+  --color-champagne-pink: #ecdfd5;
+  --color-desert-sand: #CDAB99;
+  --color-wheat: #DAC8A4;
+  --color-hunter: #172517;
+  --color-limestone: #F1ECE1;
+  --color-light: #e9d9cd;
+  --color-terracotta: #A05337;
+  --color-light-brown: #ac9080;
+  --color-dusty-blue: #829DAB;
+  --color-la-purple: #5f6db3;
+  --color-la-grey: #666;
+  --color-la-light-grey: #f6f6fb;
+
 }
 
 :root {
@@ -61,7 +63,7 @@ html {
   --grid-height: 100vh;
   --grid-padding: 6vw;
   --grid-column-count: 6;
-  --grid-gutter:  1.6rem;
+  --grid-gutter: 1.6rem;
 }
 
 :root {
@@ -75,7 +77,7 @@ html {
   --font-size-xxs: 8px; */
 
 
-  --font-size-xl:  50px;
+  --font-size-xl: 50px;
   --font-size-large: 30px;
   --font-size-h1: 30px;
   --font-size-h2: 16px;
@@ -86,8 +88,8 @@ html {
   --font-size-xs: 8px;
   --font-size-xxs: 6px;
 
-  --line-height-body-copy:2;
-  
+  --line-height-body-copy: 2;
+
   --logo-height: 34px;
   /* SOLANA */
   /* --nav-margin-top: 1.5rem;
@@ -107,18 +109,18 @@ html {
 }
 
 
-
 @media only screen and (min-width: 768px) {
   :root {
     --grid-padding: 3.5rem;
     --logo-height: 45px;
     --font-size-xxs: 10px;
     --font-size-small: 15px;
-  
+
     --font-size-h1: 45px;
     --font-size-h2: 18px;
     --font-size-h3: 30px;
   }
+
   .amenity-list-item {
     width: 20%;
   }
@@ -130,13 +132,13 @@ html {
     --font-size-small: 16px;
     --font-size-xl: 70px;
   }
-  
+
 
 }
 
 @media only screen and (min-width: 1200px) {
   :root {
-    --grid-padding:7rem;
+    --grid-padding: 7rem;
     /* --nav-margin-top: 2rem;
     --nav-margin-bottom: 2rem; */
     --nav-margin-top: 1.5rem;
@@ -144,12 +146,20 @@ html {
   }
 
 }
+
 body {
   /* background-color: var(--central-white); */
 }
-.h1, .h2, .h3, .h4, .h5, .h6 {
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   line-height: 1.2;
 }
+
 .h1 {
   font-size: var(--font-size-h1);
   line-height: var(--font-size-h1);
@@ -201,12 +211,6 @@ body {
 }
 
 
-
-
-
-
-
-
 p {
   font-size: var(--font-size-body-copy);
   line-height: var(--line-height-body-copy);
@@ -227,19 +231,19 @@ section {
   border-bottom: 1px solid var(--central-black);
 }
 
-a b{
+a b {
   color: var(--color-la-purple);
 }
 
 
 @media only screen and (min-width: 1280px) {
   :root {
- 
-      --grid-column-count: 12;
-      --grid-gutter: 2rem;
-      --page-intro-small:4.1vw;
-      --page-section: 12.5vw;
-       
+
+    --grid-column-count: 12;
+    --grid-gutter: 2rem;
+    --page-intro-small: 4.1vw;
+    --page-section: 12.5vw;
+
   }
 }
 
@@ -251,29 +255,65 @@ a b{
   -o-animation: fadeIn ease 3s;
   -ms-animation: fadeIn ease 3s;
 }
+
 @keyframes fadeIn {
-  0% {opacity:0; visibility: hidden;}
-  100% {opacity:1; visibility:visible}
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible
+  }
 }
 
 @-moz-keyframes fadeIn {
-  0% {opacity:0; visibility: hidden;}
-  100% {opacity:1; visibility:visible}
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible
+  }
 }
 
 @-webkit-keyframes fadeIn {
-  0% {opacity:0; visibility: hidden;}
-  100% {opacity:1; visibility:visible}
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible
+  }
 }
 
 @-o-keyframes fadeIn {
-  0% {opacity:0; visibility: hidden;}
-  100% {opacity:1; visibility:visible}
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible
+  }
 }
 
 @-ms-keyframes fadeIn {
-  0% {opacity:0; visibility: hidden;}
-  100% {opacity:1; visibility:visible}
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible
+  }
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -281,7 +321,4 @@ a b{
     margin-bottom: 6px;
     margin-bottom: 17px;
   }
-} 
-
-
-
+}

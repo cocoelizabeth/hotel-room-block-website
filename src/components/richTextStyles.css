@@ -1,34 +1,36 @@
 .h1 {
-    margin: 0;
-    padding: 0;
-    letter-spacing: -0.01em;
-    line-height: 1.12;
-    /* text-transform: capitalize; */
-    margin-bottom: 8px;
-    /* text-align: center; */
+  margin: 0;
+  padding: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  /* text-transform: capitalize; */
+  margin-bottom: 8px;
+  /* text-align: center; */
 
 }
+
 .h2 {
-    margin-bottom: 1em;
-    font-family: "Roboto";
-    font-weight: 600;
-    color: #666;
-    text-transform: uppercase;
-    line-height: 1.2;
+  margin-bottom: 1em;
+  font-family: "Roboto";
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  line-height: 1.2;
 }
 
 
 
 .h3 {
-    margin-top: 1em;
-    padding-top: var(--section-padding-small);
+  margin-top: 1em;
+  padding-top: var(--section-padding-small);
 }
+
 table {
-    margin: 0 auto;
-    border-collapse: collapse;
-    font-size: .8em;
-    width: 100%;
-    margin-top: calc(var(--grid-gutter) / 2);
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: .8em;
+  width: 100%;
+  margin-top: calc(var(--grid-gutter) / 2);
 
 }
 
@@ -37,41 +39,45 @@ table {
     width: fit-content;
     min-width: 50%;
   }
-} 
+}
 
 
-table, th, td {
-    border-bottom: 1px solid #dddde2;
-    vertical-align: middle;
-
-  }
-
-  td {
-    padding: .8em;
-  }
-
-  td p {
-    vertical-align: middle;
-    margin-bottom: 0;
-    /* font-size: var(--font-size-small);    */
-    padding-top: 0 !important;
-    
-
-    
-  }
-table tbody tr:nth-child(1) {
-
-    text-transform: uppercase;
-    /* font-size: .8em; */
-    letter-spacing: .1em;
-    
-  
-
-    /* color: white; */
-    
-  
+table,
+th,
+td {
+  border-bottom: 1px solid #dddde2;
+  vertical-align: middle;
 
 }
+
+td {
+  padding: .8em;
+}
+
+td p {
+  vertical-align: middle;
+  margin-bottom: 0;
+  /* font-size: var(--font-size-small);    */
+  padding-top: 0 !important;
+
+
+
+}
+
+table tbody tr:nth-child(1) {
+
+  text-transform: uppercase;
+  /* font-size: .8em; */
+  letter-spacing: .1em;
+
+
+
+  /* color: white; */
+
+
+
+}
+
 table tbody tr:nth-child(1) td p {
   font-size: 11px;
   padding-top: 0 !important;
@@ -85,7 +91,7 @@ tr:hover {
 }
 
 tr:first-of-type:hover {
-  background-color:transparent;
+  background-color: transparent;
   /* transition: ease-in; */
 }
 
@@ -98,9 +104,9 @@ li.bullets p b {
 } */
 
 body {
-    /* background-color: #F1ECE1;
+  /* background-color: #F1ECE1;
     background-color: var(--color-limestone); */
-  }
+}
 
 /* .richtext */
 a {
@@ -110,5 +116,3 @@ a {
 a.underline {
   color: var(--color-la-purple);
 }
-
-
