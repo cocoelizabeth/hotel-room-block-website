@@ -13,6 +13,7 @@ const options = {
         [MARKS.ITALIC]: (text, key) => <em key={key}>{text}</em>,
         [MARKS.UNDERLINE]: (text, key) => <u key={key}>{text}</u>,
         [MARKS.CODE]: (text, key) => <code>{text}</code>
+        // [MARKS.CODE]: (text, key) => {text}
     },
     renderNode: {
         [INLINES.HYPERLINK]: (node, children) => {

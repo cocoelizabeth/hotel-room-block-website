@@ -31,6 +31,30 @@ export default styled.header`
         margin-bottom: 0;
         cursor: pointer;
     }
+
+    .nav-right {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      letter-spacing: 1px;
+      .nav-link {
+        margin-right: var(--grid-gutter);
+        a {
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+        a.active {
+      text-decoration: underline;
+    }
+
+      }
+    }
+
+
     .button {
         position: relative;
         display: inline-block;
@@ -84,8 +108,12 @@ export default styled.header`
 
 
 
+  .button:hover,
   button:hover {
     cursor: pointer;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    background-color: var(--color-la-grey);
+    color: white;
   }
   
 

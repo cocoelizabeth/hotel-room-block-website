@@ -102,6 +102,55 @@ html {
   --section-padding-small: 3rem;
 }
 
+.button-primary button,
+.button-secondary button {
+  border: none;
+  background: none;
+  outline: none;
+  text-transform: uppercase;
+
+
+  align-items: center;
+  justify-content: center;
+  /* min-width: 130px;
+  padding: 9px 10px; */
+  /* padding: 1em; */
+  width:100%;
+  padding: 9px 10px;
+  border-width: 1px;
+  border-radius: 0;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: var(--font-size-small);
+  font-family: "Roboto";
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  line-height: 1.29;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+
+  
+}
+
+.button-primary button {
+  color: #fff;
+  background-color: var(--color-la-purple);
+  border: 1px solid var(--color-la-purple);
+}
+
+.button-secondary button {
+  color: var(--color-la-grey);
+  border: 1px solid var(--color-la-grey);
+  background-color: white;
+}
+
+.button-primary button:hover,
+.button-secondary button:hover {
+  background-color: var(--color-la-grey);
+  color: white;
+}
 @media only screen and (min-width: 576px) {
   :root {
     --grid-padding: 3rem;

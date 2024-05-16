@@ -9,6 +9,7 @@
     "@fontsource/fira-mono": "^5.0.13",
     "@fontsource/marcellus": "^5.0.13",
     "@fontsource/roboto": "^5.0.13",
+    "fslightbox-react": "^1.7.6",
     "gatsby": "^5.13.3",
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-image": "^3.13.1",

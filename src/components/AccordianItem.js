@@ -1,86 +1,80 @@
 import React from "react";
+import RichText from "./richText";
 class AccordianItem extends React.Component {
-    constructor(props) {
+    constructor(room, idx, ...props) {
         super(props)
-        
-        this.title = this.props.data.title;
-        this.content = this.props.data.content;
-        this.index = this.props.index;
-        if (this.title === "Amenities") {
-            this.communityAmenitiesSubTitle = this.content.communityAmenities.title;
-            this.communityAmenitiesContent = this.content.communityAmenities.content;
-            this.apartmentAmenitiesSubtitle = this.content.apartmentAmenities.title;
-            this.apartmentAmenitiesContent = this.content.apartmentAmenities.content;
-        }
-
+  
+        this.categoryName = room.room.categoryName;
+        this.imageGallery = room.room.imageGallery;
+        // this.heroImage = this.room.imageGallery[0];
+        this.longDescription = room.room.longDescription;
+        this.pricePerNight = room.room.pricePerNight;
+        this.shortDescription = room.room.shortDescription.shortDescription;
+        this.slug = room.room.slug;
+        this.squareFeet = room.room.squareFeet;
+        this.title = this.categoryName;
+        this.index = room.idx;
+        this.heroImageSrc = room.room.imageGallery[0].gatsbyImageData.images.fallback.src;
+        this.heroImageSrcSet = room.room.imageGallery[0].gatsbyImageData.images.sources[0].srcSet;
+        this.heroImageAltText = room.room.imageGallery[0].title;
         this.accordianContent = React.createRef();
         this.accordianTitle = React.createRef();
         this.handleAccordianItemClick = this.handleAccordianItemClick.bind(this);
         
-
+        
     }
+    
+
 
     handleAccordianItemClick() {
         this.accordianContent.current.classList.toggle("reveal");
         this.accordianTitle.current.classList.toggle("reveal");
     }
 
-
-
     render() {
-      let firstItem;
-      if (this.index === 0) {
-         firstItem = "reveal"
-      }
-
-        
- 
-        
-        if (this.title.includes("Amenities")) {
+        let firstItem;
+        if (this.index === 0) {
+           firstItem = "reveal"
+        }
+   
             return (
-                <li 
-                    className="accordian-item-card border-bottom"
-                    id={`pos-${this.index}`}
-                    onClick = {this.handleAccordianItemClick}
-                    key={this.title}
+                <>
+
+                <li
+                className="accordian-item-card border-bottom"
+                id={`pos-${this.index}`}
+                key={this.title}
                 >
-                <h1 ref={this.accordianTitle} className="accordian-title">{this.title}</h1>
-                <div className="accordian-content amenities" ref={this.accordianContent}>
-                    <div className="amenities-container">
-                        <div className="accordian-item-subtitle">{this.communityAmenitiesSubTitle}</div>
-                        <div className="amenities-list-container">
-                            {this.communityAmenitiesContent}
+                    {/* <div onClick = {this.handleAccordianItemClick} ref={this.accordianTitle}  className={`h1 accordian-title ${firstItem}`}>{this.title}</div> */}
+                    <div onClick = {this.handleAccordianItemClick} ref={this.accordianTitle}  className={`h1 accordian-title ${firstItem}`}>
+                        <div className="accordian-hero-img-container">
+                            <img src={this.heroImageSrc} srcSet={this.heroImageSrcSet} className="hero-image" alt={this.heroImageAltText}></img>
                         </div>
-                        <div className="accordian-item-subtitle">{this.apartmentAmenitiesSubtitle}</div>
-                        <div className="amenities-list-container">
-                            {this.apartmentAmenitiesContent}
-                     
+                        <div className="accordian-text-title-container">
+                            <div className="h3 room-title">{this.title}</div>
+                            <div className="h4 price">${this.pricePerNight} USD per night</div>
+                            <div className="h4 square-feet">{this.squareFeet} ft<sup>2</sup></div>
+                            <div className="arrow"></div>
                         </div>
-                        <div className="asterix-text">*In all one and two bedroom apartments</div>
+                 
+
+                        
                     </div>
-  
-                </div>
 
-                   
-            </li>
-            ) 
-        } else {
-            return (
-                <li 
-                    className="accordian-item-card border-bottom"
-                    id={`pos-${this.index}`}
-                    key={this.title}
-                >
-                    <h1 onClick = {this.handleAccordianItemClick} ref={this.accordianTitle}  className={`accordian-title ${firstItem}`}>{this.title}</h1>
+                    {/* <div className="accordian-item-subtitle">{this.pricePerNight}</div> */}
                     <div className={`accordian-content ${firstItem} ${this.title}`} ref={this.accordianContent}>
-                        {this.content}
+                        {this.categoryName}
+                        <RichText copy={this.longDescription} title={this.title} />
                     </div>
-                       
+
+
                 </li>
+                </>
             )
+         
         }
     }
-}
+
       
        
 

@@ -82,6 +82,7 @@ const DeluxeRoomKing = () => (
 export default DeluxeRoomKing
 
 
+
 export const pageQuery = graphql`
       query  {
         allContentfulHotelRoomType {
@@ -91,6 +92,8 @@ export const pageQuery = graphql`
               slug
               pricePerNight
               squareFeet
+              beds
+              capacity
               imageGallery {
                 gatsbyImageData
                 file {

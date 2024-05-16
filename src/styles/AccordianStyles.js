@@ -27,6 +27,8 @@ export default styled.div`
     padding: 2rem 0px;
     cursor: pointer;
     display: block;
+    font-size: var(--font-size-h1);
+    /* font-weight: 400; */
   }
 
   /* MAKE TITLE BLACK ON REVEAL */
@@ -49,7 +51,7 @@ export default styled.div`
   }
 
   .accordian-title:after {
-    content: "";
+    /* content: "";
     position: absolute;
     width: 24px;
     height: 24px;
@@ -59,7 +61,7 @@ export default styled.div`
       no-repeat center center;
     margin: 2rem 0px;
     z-index: 2;
-    right: var(--grid-padding);
+    right: var(--grid-padding); */
   }
 
   .accordian-title:hover {
@@ -235,6 +237,37 @@ export default styled.div`
     margin-bottom: 30px;
   }
 
+  .accordian-hero-img-container {
+        max-width: 400px;
+        
+    }
+    .h3.room-title {
+        padding-top: 0;
+    }
+    .accordian-text-title-container > .h4 {
+        font-size: var(--font-size-body-copy);
+    }
+
+    .arrow {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        right: var(--grid-gutter);
+        background: transparent url(data:image/svg+xml,%3Csvg%20stroke%3D%22currentColor%22%20fill%3D%22currentColor%22%20stroke-width%3D%220%22%20viewBox%3D%220%200%201024%201024%22%20height%3D%221em%22%20width%3D%221em%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M8.2%20275.4c0-8.6%203.4-17.401%2010-24.001%2013.2-13.2%2034.8-13.2%2048%200l451.8%20451.8%20445.2-445.2c13.2-13.2%2034.8-13.2%2048%200s13.2%2034.8%200%2048L542%20775.399c-13.2%2013.2-34.8%2013.2-48%200l-475.8-475.8c-6.8-6.8-10-15.4-10-24.199z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E) no-repeat center center;
+        /* margin: 2rem 0px; */
+        z-index: 2;
+        right: var(--grid-padding);
+        color: red;
+        fill: red;
+    }
+
+    .accordian-title.reveal {
+        .arrow {
+            background-image: url(data:image/svg+xml,%3Csvg%20stroke%3D%22currentColor%22%20fill%3D%22currentColor%22%20stroke-width%3D%220%22%20viewBox%3D%220%200%201024%201024%22%20height%3D%221em%22%20width%3D%221em%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M8.2%20751.4c0%208.6%203.4%2017.401%2010%2024.001%2013.2%2013.2%2034.8%2013.2%2048%200l451.8-451.8%20445.2%20445.2c13.2%2013.2%2034.8%2013.2%2048%200s13.2-34.8%200-48L542%20251.401c-13.2-13.2-34.8-13.2-48%200l-475.8%20475.8c-6.8%206.8-10%2015.4-10%2024.2z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E);
+
+        }
+    }
   @media only screen and (min-width: 768px) {
     .amenity-list-item {
       padding-left: 40px;
