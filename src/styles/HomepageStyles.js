@@ -135,7 +135,7 @@ p code {
   background: none;
   outline: none;
   text-transform: uppercase;
-  color: var(--color-la-grey);
+
   border: 1px solid var(--color-la-grey);
   background-color: white;
 
@@ -159,12 +159,20 @@ p code {
   cursor: pointer;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
-    width: 100% !important;
+    width: 100%;
+    a {
+        text-decoration: none;
+        color: var(--color-la-grey);
+    }
 }
 p code:hover {
     background-color: var(--color-la-grey);
-        color: white;
+     
+        a {
+            color: white;
+        }
 }
+
 /*----------  How to Book  ----------*/
 /* Heading */
 .richTextContainer :nth-child(8) {}

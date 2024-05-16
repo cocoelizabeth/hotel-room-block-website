@@ -1,6 +1,7 @@
 import * as React from "react"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { INLINES, BLOCKS, MARKS } from '@contentful/rich-text-types'
+import { Link } from "gatsby"
 import "./richTextStyles.css"
 const options = {
     renderText: text => {
@@ -12,7 +13,7 @@ const options = {
         [MARKS.BOLD]: (text) => <b>{text}</b>,
         [MARKS.ITALIC]: (text, key) => <em key={key}>{text}</em>,
         [MARKS.UNDERLINE]: (text, key) => <u key={key}>{text}</u>,
-        [MARKS.CODE]: (text, key) => <code>{text}</code>
+        [MARKS.CODE]: (text, key) => <code><Link to="rooms">{text}</Link></code>
         // [MARKS.CODE]: (text, key) => {text}
     },
     renderNode: {
