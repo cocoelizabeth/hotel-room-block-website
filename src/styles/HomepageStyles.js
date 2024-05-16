@@ -8,7 +8,7 @@ section {
     padding-bottom: 2rem;
 }
 .hero-image-container {
-        padding-top: var(--header-height);
+        /* padding-top: var(--header-height); */
         height: calc(100vh - (var(--header-height) * 5));
         position: relative;
     }

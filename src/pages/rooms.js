@@ -31,7 +31,7 @@ export default class RoomsPage extends React.Component {
 
     return (
       <div>
-        <HomepageStyles>
+        {/* <HomepageStyles>
           <div className="hero-image-container fade-in">
             <img
               src="https://images.ctfassets.net/60nhqkckk4i6/4D38AVYfDeVw8TBxXg7XxZ/06ad9725c6834638cace499ebe998454/deluxe-room-king-bed-2-1800x1200_standard.jpg?w=1400&amp;h=1050&amp;fl=progressive&amp;q=50&amp;fm=jpg"
@@ -42,9 +42,10 @@ export default class RoomsPage extends React.Component {
               alt=""
             ></img>
           </div>
-        </HomepageStyles>
+        </HomepageStyles> */}
         <RoomsPageStyles>
         <div className="rooms-container">
+          <div className="h1">Room Options</div>
                 <ul className="room-items-container">
                     {roomItems}
                 </ul>

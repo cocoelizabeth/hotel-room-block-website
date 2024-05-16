@@ -9,6 +9,7 @@ export default styled.div`
     margin-right: auto;
     margin-left: auto;
     padding: var(--grid-padding);
+    padding-top: var(--section-padding-small);
 
 }
 .room-items-container {
@@ -21,6 +22,9 @@ export default styled.div`
     /* gap: var(--grid-gutter); */
     /* row-gap: var(--grid-gutter); */
     /* column-gap: var(--grid-gutter); */
+}
+.h1 {
+    padding-bottom: var(--grid-gutter);
 }
 
 .room-card-container {
