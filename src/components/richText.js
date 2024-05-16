@@ -13,7 +13,7 @@ const options = {
         [MARKS.BOLD]: (text) => <b>{text}</b>,
         [MARKS.ITALIC]: (text, key) => <em key={key}>{text}</em>,
         [MARKS.UNDERLINE]: (text, key) => <u key={key}>{text}</u>,
-        [MARKS.CODE]: (text, key) => <code><Link to="rooms">{text}</Link></code>
+        [MARKS.CODE]: (text, key) => <Link to="rooms"><code>{text}</code></Link>
         // [MARKS.CODE]: (text, key) => {text}
     },
     renderNode: {

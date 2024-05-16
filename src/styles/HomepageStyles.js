@@ -129,7 +129,7 @@ p:has(code) {
     display: flex;
 }
 
-p code {
+p a {
 
     border: none;
   background: none;
@@ -160,15 +160,15 @@ p code {
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
     width: 100%;
-    a {
+    code {
         text-decoration: none;
         color: var(--color-la-grey);
     }
 }
-p code:hover {
+p a:hover {
     background-color: var(--color-la-grey);
      
-        a {
+        code {
             color: white;
         }
 }
