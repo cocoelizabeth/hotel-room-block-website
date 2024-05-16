@@ -129,7 +129,7 @@ p:has(code) {
     display: flex;
 }
 
-p a {
+a:has(code) {
 
     border: none;
   background: none;
@@ -165,7 +165,7 @@ p a {
         color: var(--color-la-grey);
     }
 }
-p a:hover {
+a:has(code):hover {
     background-color: var(--color-la-grey);
      
         code {
