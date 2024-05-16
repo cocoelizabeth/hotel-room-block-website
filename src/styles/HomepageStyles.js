@@ -131,10 +131,8 @@ p:has(code) {
 
 a:has(code) {
 
-    border: none;
-  background: none;
-  outline: none;
-  text-transform: uppercase;
+
+
 
   border: 1px solid var(--color-la-grey);
   background-color: white;
@@ -172,6 +170,14 @@ a:has(code):hover {
             color: white;
         }
 }
+
+/* p a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: .1em;
+    font-weight: 400;
+} */
 
 /*----------  How to Book  ----------*/
 /* Heading */

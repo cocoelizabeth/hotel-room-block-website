@@ -193,5 +193,5 @@ function RoomPageTemplate({ data }) {
 export default RoomPageTemplate
 
 export const Head = ({ data }) => (
-  <Seo title={data.contentfulHotelRoomType.categoryName} />
+  <Seo title={data.contentfulHotelRoomType.categoryName} ogImage={data.contentfulHotelRoomType.imageGallery[0].gatsbyImageData.images.sources[0].srcSet}/>
 )
