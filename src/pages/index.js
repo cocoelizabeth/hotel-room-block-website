@@ -1,12 +1,10 @@
 import * as React from "react"
-import { Link, graphql, navigate, useStaticQuery } from 'gatsby'
-import { StaticImage } from "gatsby-plugin-image"
-import Layout from "../components/Layout"
+import { graphql, useStaticQuery } from 'gatsby'
 import Seo from "../components/seo"
 // import * as styles from "../components/index.module.css"
 import RichText from "../components/richText"
 import HomepageStyles from "../styles/HomepageStyles";
-import Accordian from "../components/Accordian";
+
 
 
 

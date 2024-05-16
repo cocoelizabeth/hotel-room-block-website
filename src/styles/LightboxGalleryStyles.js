@@ -24,16 +24,14 @@ export default styled.div`
     height: 100%;
   }
   @media (min-width: 576px) {
-
   }
-
 
   @media (min-width: 768px) {
   }
 
   @media (min-width: 1025px) {
     .gallery-container {
-        grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
     }
   }
 

@@ -8,9 +8,10 @@ section {
     padding-bottom: 2rem;
 }
 .hero-image-container {
-        /* padding-top: var(--header-height); */
+        padding-top: var(--header-height);
         height: calc(100vh - (var(--header-height) * 5));
         position: relative;
+        margin-top:calc(var(--header-height) * -1);
     }
     .hero-image {
         object-fit: cover;
@@ -124,7 +125,46 @@ section {
         width: 100%;
     } 
 } */
+p:has(code) {
+    display: flex;
+}
 
+p code {
+
+    border: none;
+  background: none;
+  outline: none;
+  text-transform: uppercase;
+  color: var(--color-la-grey);
+  border: 1px solid var(--color-la-grey);
+  background-color: white;
+
+  align-items: center;
+  justify-content: center;
+  /* min-width: 130px;
+  padding: 9px 10px; */
+  /* padding: 1em; */
+  width:100%;
+  padding: 9px 10px;
+  border-width: 1px;
+  border-radius: 0;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: var(--font-size-small);
+  font-family: "Roboto";
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  line-height: 1.29;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+    width: 100% !important;
+}
+p code:hover {
+    background-color: var(--color-la-grey);
+        color: white;
+}
 /*----------  How to Book  ----------*/
 /* Heading */
 .richTextContainer :nth-child(8) {}

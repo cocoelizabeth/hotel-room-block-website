@@ -1,15 +1,6 @@
 import * as React from "react"
-import { Link, graphql, navigate, useStaticQuery } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import Layout from "../components/Layout"
+import { graphql } from "gatsby"
 import Seo from "../components/seo"
-// import * as styles from "../components/index.module.css"
-import RichText from "../components/richText"
-import HomepageStyles from "../styles/HomepageStyles"
-import Accordian from "../components/Accordian"
-import AccordianItem from "../components/AccordianItem"
-import Image from "../components/Image"
-import AccordianStyles from "../styles/AccordianStyles"
 import RoomCard from "../components/RoomCard"
 import RoomsPageStyles from "../styles/RoomsPageStyles"
 
@@ -24,11 +15,7 @@ export default class RoomsPage extends React.Component {
     let roomItems = this.rooms.map((room, i) => {
       return <RoomCard idx={i} key={i} room={room.node} />
     })
-
-    let roomAccordianItems = this.rooms.map((room, i) => {
-      return <AccordianItem idx={i} key={i} room={room.node} />
-    })
-
+    
     return (
       <div>
         {/* <HomepageStyles>
@@ -51,11 +38,7 @@ export default class RoomsPage extends React.Component {
                 </ul>
             </div>
         </RoomsPageStyles>
-        {/* <AccordianStyles>
-          <ul className="accordian-container">{roomAccordianItems}</ul>
-        </AccordianStyles> */}
       </div>
-    
     )
   }
 }
@@ -91,3 +74,4 @@ export const pageQuery = graphql`
     }
   }
 `
+export const Head = () => <Seo title="Rooms" />

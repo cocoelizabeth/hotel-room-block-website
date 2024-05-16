@@ -1,32 +1,21 @@
 import React from 'react';
-import Image from "./Image";
-import AccordianStyles from "../styles/AccordianStyles";
-import AccordianItem from "./AccordianItem";
 import { Link } from 'gatsby';
 import { useBookRoomTypeTemplate } from '../hooks/useBookRoomTypeTemplate';
-// import { MdClose } from 'react-icons/md';
-// import clsx from 'clsx';
-// import HeaderStyles from '../styles/HeaderStyles';
-// import { menu } from '../constants/menu';
-// import Logo from './Logo';
-// import ActionButton from './buttons/ActionButton';
-// import Button from './buttons/Button';
-
 
 
 const RoomCard = ({room,...props}) => {
 
-    let USDollar = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-    });
+    // let USDollar = new Intl.NumberFormat('en-US', {
+    //     style: 'currency',
+    //     currency: 'USD',
+    // });
 
     const categoryName = room.categoryName;
-    const imageGallery = room.imageGallery;
-    const longDescription = room.longDescription;
+    // const imageGallery = room.imageGallery;
+    // const longDescription = room.longDescription;
     // const pricePerNight = USDollar.format(room.pricePerNight);
     const pricePerNight = room.pricePerNight.toLocaleString();
-    const shortDescription = room.shortDescription;
+    // const shortDescription = room.shortDescription;
     const slug = room.slug.split("/").pop();
     const squareFeet = room.squareFeet.toLocaleString();
     const heroImageSrc = room.imageGallery[0].gatsbyImageData.images.fallback.src;

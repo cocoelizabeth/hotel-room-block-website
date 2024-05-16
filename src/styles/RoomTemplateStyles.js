@@ -1,10 +1,5 @@
 import styled from "styled-components"
 export default styled.div`
-  /* background: linear-gradient(
-    to bottom,
-    #f8f5f2 0%,
-    rgba(248, 245, 242, 0) 100%
-  ); */
   ul {
     margin-top: 0;
   }
@@ -13,10 +8,7 @@ export default styled.div`
     margin-right: auto;
     margin-left: auto;
     padding: var(--grid-padding);
-    padding-top: var(--header-height);
-    padding-top: calc(
-      var(--header-height) + (var(--section-padding-small) / 2)
-    );
+    padding-top: var(--section-padding-small);
     .breadcrumbs {
       font-size: var(--font-size-xs);
       text-transform: uppercase;
@@ -39,6 +31,8 @@ export default styled.div`
     margin: 0;
     list-style-type: none;
   }
+
+
 
   .price-container {
     display: flex;

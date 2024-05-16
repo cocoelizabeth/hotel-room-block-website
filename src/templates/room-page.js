@@ -1,21 +1,10 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { format } from "date-fns"
-import { FiCalendar, FiUser } from "react-icons/fi"
-import { BiCategory } from "react-icons/bi"
-import Layout from "../components/Layout"
 import RoomTemplateStyles from "../styles/RoomTemplateStyles"
 import { useBookRoomTypeTemplate } from "../hooks/useBookRoomTypeTemplate"
 import LightBoxGallery from "../components/LightboxGallery"
-import RichText from "../components/richText"
 import VirtualTour from "../components/VirtualTour"
-// import { SingleBlogStyles } from '../styles/blog/SingleBlogStyles';
-// import { Title } from '../components/typography/Title';
-// import SEO from '../components/SEO';
-// import PageSpace from '../components/PageSpace';
-// import MyPortableText from '../components/MyPortableText';
-// import ParagraphText from '../components/typography/ParagraphText';
+import Seo from "../components/seo"
 
 export const postQuery = graphql`
   query SingleHotelRoomTypeQuery($id: String!) {
@@ -49,51 +38,42 @@ export const postQuery = graphql`
 `
 
 function RoomPageTemplate({ data }) {
-  let USDollar = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-});
-  const room = data.contentfulHotelRoomType;
-  const categoryName = room.categoryName;
-  const slug = room.slug;
-    // const pricePerNight = USDollar.format(room.pricePerNight);
-    const pricePerNight = room.pricePerNight.toLocaleString();
-  const squareFeet = room.squareFeet.toLocaleString();
-  const beds = room.beds[0];
-  const capacity = room.capacity;
-  const imageGallery = room.imageGallery;
-  const shortDescription = room.shortDescription.shortDescription;
-  const longDescription = room.longDescription;
-  const heroImageSrc = room.imageGallery[0].gatsbyImageData.images.fallback.src;
+  // let USDollar = new Intl.NumberFormat("en-US", {
+  //   style: "currency",
+  //   currency: "USD",
+  // })
+  const room = data.contentfulHotelRoomType
+  const categoryName = room.categoryName
+  // const slug = room.slug
+  // const pricePerNight = USDollar.format(room.pricePerNight);
+  const pricePerNight = room.pricePerNight.toLocaleString()
+  const squareFeet = room.squareFeet.toLocaleString()
+  const beds = room.beds[0]
+  const capacity = room.capacity
+  const imageGallery = room.imageGallery
+  const shortDescription = room.shortDescription.shortDescription
+  // const longDescription = room.longDescription
+  const heroImageSrc = room.imageGallery[0].gatsbyImageData.images.fallback.src
   const heroImageSrcSet =
-    room.imageGallery[0].gatsbyImageData.images.sources[0].srcSet;
-  const heroImageAltText = room.imageGallery[0].categoryName;
-  const bookNowLink = useBookRoomTypeTemplate(categoryName);
-  let virtualTourSrc;
-  if(room.virtualTour) {
-     virtualTourSrc = room.virtualTour.virtualTour
-  }else{
-     virtualTourSrc = false;
+    room.imageGallery[0].gatsbyImageData.images.sources[0].srcSet
+  const heroImageAltText = room.imageGallery[0].categoryName
+  const bookNowLink = useBookRoomTypeTemplate(categoryName)
+  let virtualTourSrc
+  if (room.virtualTour) {
+    virtualTourSrc = room.virtualTour.virtualTour
+  } else {
+    virtualTourSrc = false
   }
-
-
-
-  
-  // create Book Now Link
-  // const template = "mailto:reservacionesaqsm@posadas.com?subject=Room%20Reservation%20for%20Coco%20%26%20Adam%E2%80%99s%20Wedding%20-%20Group%20Code%20G1RC3D&body=Dear%20Reservations%20Team%2C%0A%0AI%20would%20like%20to%20book%20a%20room%20for%20Coco%20and%20Adam%27s%20wedding%20in%20San%20Miguel%20de%20Allende%20(Group%20Code%20G1RC3D).%20Please%20find%20my%20details%20below%20for%20the%20reservation%3A%0A%0A-%20Name%3A%0A-%20Email%3A%0A-%20Arrival%20Date%3A%0A-%20Departure%20Date%3A%0A-%20Room%20Type%3A%20%0A-%20Number%20of%20Adults%3A%0A-%20Number%20of%20Children%3A%0A-%20Names%20of%20Additional%20Guests%20Staying%20in%20Room%3A%0A-%20Telephone%3A%0A-%20Address%3A%20%0A-%20City%3A%20%0A-%20State%3A%0A-%20Postal%20Code%3A%0A-%20Country%3A%0A-%20Comments%3A%20%0A%0APlease%20confirm%20the%20availability%20of%20the%20rooms%20and%20any%20further%20steps%20needed%20to%20finalize%20my%20booking.%0A%0AThank%20you%20very%20much!%0A%0ABest%20regards%2C%0A"
-  // const roomName =categoryName.toUpperCase()
-  // const roomNameSubject = "=".concat(roomName.split(" ").join("%20").concat("%20|%20"))
-  // const addSubject = template.split("=Room%20").join(roomNameSubject)
-  // const roomNameBody = "Type%3A%20".concat(roomName.split(" ").join("%20"))
-  // const addBody = addSubject.split("Type%3A").join(roomNameBody)
-  // const bookNowLink = addBody;
 
   return (
     <RoomTemplateStyles>
       <div className="room-template-container">
         <div className="breadcrumbs">
-          <Link to="/rooms" className="bc-link">ROOMS</Link>
-          <span> / {categoryName}</span></div>
+          <Link to="/rooms" className="bc-link">
+            ROOMS
+          </Link>
+          <span> / {categoryName}</span>
+        </div>
         <div className="h1">{categoryName}</div>
 
         <div className="room-content-container">
@@ -140,7 +120,7 @@ function RoomPageTemplate({ data }) {
               </div>
               <div className="icon-stat sqaure-feet-container">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg" 
+                  xmlns="http://www.w3.org/2000/svg"
                   id="Atom_-_icon_-_person"
                   data-name="Atom - icon - person"
                   width="22.93"
@@ -182,11 +162,17 @@ function RoomPageTemplate({ data }) {
             </div>
             <p className="description">{shortDescription}</p>
             <p className="description">
-              <b>How to Book:</b> Click the 'BOOK NOW' button below to use a preformatted email template— just fill in your details where indicated. The template outlines all the necessary information required to initiate your reservation. 
-              If you prefer not to use the pre-formatted template, you may email the hotel directly at <Link to="mailto:reservacionesaqsm@posadas.com" >reservacionesaqsm@posadas.com</Link>. Make sure to include the group code "G1RC3D" in your email to receive the discounted rate.
-
-              </p>
-           
+              <b>How to Book:</b> Click the 'BOOK NOW' button below to use a
+              preformatted email template— just fill in your details where
+              indicated. The template outlines all the necessary information
+              required to initiate your reservation. If you prefer not to use
+              the pre-formatted template, you may email the hotel directly at{" "}
+              <Link to="mailto:reservacionesaqsm@posadas.com">
+                reservacionesaqsm@posadas.com
+              </Link>
+              . Make sure to include the group code "G1RC3D" in your email to
+              receive the discounted rate.
+            </p>
             <div class="button-primary">
               <a href={bookNowLink}>
                 <button>Book Now</button>
@@ -194,73 +180,18 @@ function RoomPageTemplate({ data }) {
             </div>
           </div>
         </div>
-
-
-
-
         <LightBoxGallery gallery={imageGallery} />
-
         <VirtualTour virtualTour={virtualTourSrc} />
-      
         <Link to="/rooms">
           <div className="return-link">VIEW ALL ROOMS</div>
         </Link>
-
-            {/* <div className="virtual-tour-container">
-              <iframe 
-                src={virtualTourSrc}
-                role="dialog"
-                aria-modal="true" 
-                title="TrueTour® for fiesta americana puerto vallarta all inclusive icms"
-                >
-              </iframe>
-          </div> */}
-
       </div>
     </RoomTemplateStyles>
-    // <SingleBlogStyles>
-    //   <SEO title={blog.title} />
-    //   <PageSpace top={80} bottom={100}>
-    //     <div className="container">
-    //       <div className="blog-header">
-    //         <GatsbyImage
-    //           image={blog.coverImage.asset.gatsbyImageData}
-    //           alt={blog.coverImage.alt}
-    //           className="blog-cover-image"
-    //         />
-    //         <Title className="title">{blog.title}</Title>
-    //         <ParagraphText className="publishedAt">
-    //           <FiCalendar />
-    //           {format(new Date(blog.publishedAt), 'p, MMM dd yyyy')}
-    //         </ParagraphText>
-    //         <ParagraphText className="categoriesText">
-    //           <BiCategory />
-    //           <span>
-    //             {blog.categories.map((item, index) => (
-    //               <span key={item.slug.current}>
-    //                 <Link to={`/categories/${item.slug.current}`}>
-    //                   {item.title}
-    //                 </Link>
-    //                 {index < blog.categories.length - 1 ? ', ' : ''}
-    //               </span>
-    //             ))}
-    //           </span>
-    //         </ParagraphText>
-    //         <ParagraphText className="author">
-    //           <FiUser />
-    //           <Link to={`/authors/${blog.author.slug.current}`}>
-    //             {blog.author.name}
-    //           </Link>
-    //         </ParagraphText>
-    //         <hr className="hr" />
-    //         <div className="body">
-    //           <MyPortableText value={blog._rawBody} />
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </PageSpace>
-    // </SingleBlogStyles>
   )
 }
 
 export default RoomPageTemplate
+
+export const Head = ({ data }) => (
+  <Seo title={data.contentfulHotelRoomType.categoryName} />
+)
