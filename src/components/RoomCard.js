@@ -21,20 +21,32 @@ const RoomCard = ({room,...props}) => {
     const heroImageSrc = room.imageGallery[0].gatsbyImageData.images.fallback.src;
     const heroImageSrcSet = room.imageGallery[0].gatsbyImageData.images.sources[0].srcSet;
     const heroImageAltText = room.imageGallery[0].categoryName;
-
+    const soldOut = room.soldOut;
     const bookNowLink = useBookRoomTypeTemplate(categoryName);
+    let bookNowButtonText;
+    let bookNowButtonDisabled;
+    if (soldOut) {
+      bookNowButtonDisabled= "disabled";
+      bookNowButtonText = "Sold Out";
+    } else {
+      bookNowButtonDisabled = "";
+      bookNowButtonText = "Book Now";
+    }
+  
 
 
   return (
 
         <li className="room-card-container">
             <div className='hero-image'>
-                <img src={heroImageSrc} srcSet={heroImageSrcSet} className="hero-image" alt={heroImageAltText}></img>
+                <Link  to={`/rooms/${slug}`}>
+                    <img src={heroImageSrc} srcSet={heroImageSrcSet} className="hero-image" alt={heroImageAltText}></img>
+                </Link>
             </div>
             <div className="room-card-text-container">
-   
-                <div className="h3 room-title">{categoryName}</div>
-             
+                <Link className="room-card-title-link" to={`/rooms/${slug}`}>
+                    <div className="h3 room-title">{categoryName}</div>
+                </Link>
                 <div className="h4 price">${pricePerNight} USD per night <span className="sf">• {squareFeet} ft²</span></div>
                 {/* <div className="h4 price">${pricePerNight} USD per night</div>
                 <div className="h4 square-feet">{squareFeet} ft²</div> */}
@@ -51,7 +63,11 @@ const RoomCard = ({room,...props}) => {
                     </div>
                     <div class="button-primary">
                     <a href={bookNowLink}>
-                        <button>Book Now</button>
+                        <button 
+                            disabled={bookNowButtonDisabled} 
+                            className={bookNowButtonDisabled}>
+                            {bookNowButtonText}
+                        </button>
                         </a>
                     </div>
                 </div>

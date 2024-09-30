@@ -49,11 +49,16 @@ td {
   vertical-align: middle;
 
 }
-
+tr:hover  {
+  cursor: pointer !important;
+}
 td {
   padding: .8em;
 }
 
+td a {
+  cursor: pointer !important;
+}
 td p {
   vertical-align: middle;
   margin-bottom: 0;

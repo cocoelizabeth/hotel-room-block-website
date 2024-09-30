@@ -31,6 +31,11 @@ export default styled.div`
     background-color: white;
 }
 
+.room-card-title-link {
+    text-decoration: none;
+
+}
+
 .room-card-text-container {
     .room-title,
     .price,
@@ -72,6 +77,8 @@ export default styled.div`
 .button-primary {
     width: 100%;
 }
+
+
 @media (min-width: 576px) {
     .rooms-container {
         max-width: 80%;

@@ -15,6 +15,7 @@ export const postQuery = graphql`
       squareFeet
       beds
       capacity
+      soldOut
       virtualTour {
         virtualTour
       }
@@ -58,12 +59,26 @@ function RoomPageTemplate({ data }) {
     room.imageGallery[0].gatsbyImageData.images.sources[0].srcSet
   const heroImageAltText = room.imageGallery[0].categoryName
   const bookNowLink = useBookRoomTypeTemplate(categoryName)
-  let virtualTourSrc
+  const soldOut = room.soldOut;
+
+  let virtualTourSrc;
   if (room.virtualTour) {
     virtualTourSrc = room.virtualTour.virtualTour
   } else {
     virtualTourSrc = false
   }
+  
+  let bookNowButtonText;
+  let bookNowButtonDisabled;
+  if (soldOut) {
+    bookNowButtonDisabled= "disabled";
+    bookNowButtonText = "Sold Out";
+  } else {
+    bookNowButtonDisabled = "";
+    bookNowButtonText = "Book Now";
+  }
+
+
 
   return (
     <RoomTemplateStyles>
@@ -173,9 +188,13 @@ function RoomPageTemplate({ data }) {
               . Make sure to include the group code "G1RC3D" in your email to
               receive the discounted rate.
             </p>
-            <div class="button-primary">
+            <div className="button-primary">
               <a href={bookNowLink}>
-                <button>Book Now</button>
+                <button 
+                  disabled={bookNowButtonDisabled} 
+                  className={bookNowButtonDisabled}>
+                    {bookNowButtonText}
+                </button>
               </a>
             </div>
           </div>

@@ -54,6 +54,7 @@ export const pageQuery = graphql`
           squareFeet
           beds
           capacity
+          soldOut
           imageGallery {
             gatsbyImageData
             file {

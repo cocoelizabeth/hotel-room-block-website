@@ -141,6 +141,15 @@ html {
   border: 1px solid var(--color-la-purple);
 }
 
+.button-primary button.disabled {
+  opacity: 50%;
+}
+
+.button-primary button.disabled:hover {
+  background-color: var(--color-la-purple);
+
+}
+
 .button-secondary button {
   color: var(--color-la-grey);
   border: 1px solid var(--color-la-grey);

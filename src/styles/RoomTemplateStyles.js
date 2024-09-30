@@ -129,6 +129,20 @@ export default styled.div`
     text-decoration: none;
   }
 
+  @media (max-width: 440px) {
+    .icon-stats-container {
+        /* justify-content: space-between; */
+        .icon-stat {
+          margin-right: 15px;
+        }
+        .h4.stat-label {
+          font-size: 12px;
+        }
+    }
+  
+
+}
+
   @media (min-width: 576px) {
     .room-template-container {
       /* max-width: 540px; */
